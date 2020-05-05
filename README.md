@@ -105,3 +105,6 @@ cd render_list_geo.pl
 ```
 
 Repeat as needed for as many areas/cities as you wish and have imported.
+
+**This has started you an OSM tileserver on localhost only. Use nginx/apache reverse proxy blocks to access externally.
+

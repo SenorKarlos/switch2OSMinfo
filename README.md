@@ -94,6 +94,7 @@ Render the 'easy layers' in full, run this command from anywhere in the containe
 Use the 'Extra Tool' to render specific areas. 'n' refers to the number of threads to run, I matched it to the threads specified in compose. I'm also crazy and rendered all the way to layer 20 for each city :D
 In a web browser, visit http://bboxfinder.com - draw a rectangle over the area you wish to render. Replace the numbers below with the numbers generated per the example
 ![Starting & Rendering](assets/example.png?raw=true)
+
 `cd render_list_geo.pl`
 `./render_list_geo.pl -n 9 -m ajt -z 11 -Z 20 -x <1> -X <2> -y <3> -Y <4>`
 

@@ -1,6 +1,8 @@
 # switch2OSMinfo
 Additional information to accompany https://switch2osm.org/serving-tiles/using-a-docker-container/ 
 
+Motivation: to reduce load on the free openstreetmap resource while having access to the default 'Carto' map appearance and having information beyond 2017 on those tiles. And to say I did it :D
+
 I recommend thoroughly reading the above page, and the linked pages found on it for the basis of this information. Thuis summary is provided to help avoid several of the pitfalls I encountered and to provide a fully prepared docker-compose file.
 
 During the database creation and initial tile rendering processes, you will use a LOT of resources, and exceeding overall server limits is quite easy. The following information is based on a 12 thread, 3.5GHz server with 32GB DDR4 & 2x512GB NVMe SSD in Raid 0, importing North America and rendering much of it - for which I am linking a tool to save alot time I wasted. You can do smaller extracts with much less resources, so adjust as needed. This machine is also running RDM & various bots, so if using a dedicated machine you could also adjust for more.
@@ -15,8 +17,10 @@ mkdir OSMTileServer && cd OSMTileServer
 git clone https://github.com/alx77/render_list_geo.pl.git
 ```
 
-Follow the steps on the switch2osm readme to wget your region extract and poly file to the current directory from geofabrik. If doing the whole planet, you can find the pbf download at https://ftpmirror.your.org/pub/openstreetmap/pbf/
-Remove the UPDATES flag and you will have to research how to update via osmosis or similar tools if doing whole planet. Can't say how much I don't recommend this though, unless needed and you have a monster server with several TB of storage.
+Follow the steps on the switch2osm readme to wget your region extract and poly file to the current directory from geofabrik. 
+
+*Note* If doing the whole planet, you can find the pbf download at https://ftpmirror.your.org/pub/openstreetmap/pbf/ and
+remove the UPDATES flag - you will have to research how to update via osmosis or similar tools if you wish to keep the data current. Can't say how much I don't recommend this though, unless REALLY needed and/or you have a monster server with several TB of storage.
 
 Copy the following contents using your favorite editor
 

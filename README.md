@@ -3,9 +3,9 @@ Additional information to accompany https://switch2osm.org/serving-tiles/using-a
 
 Motivation: to reduce load on the free openstreetmap resource while having access to the default 'Carto' map appearance and having information beyond 2017 on those tiles. And to say I did it :D
 
-I recommend thoroughly reading the above page, and the linked pages found on it for the basis of this information. Thuis summary is provided to help avoid several of the pitfalls I encountered and to provide a fully prepared docker-compose file.
+I recommend thoroughly reading the above page, and the linked pages found on it for the basis of this information. This summary is provided to help avoid several of the pitfalls I encountered and to provide a fully prepared docker-compose file.
 
-During the database creation and initial tile rendering processes, you will use a LOT of resources, and exceeding overall server limits is quite easy. The following information is based on a 12 thread, 3.5GHz server with 32GB DDR4 & 2x512GB NVMe SSD in Raid 0, importing North America and rendering much of it - for which I am linking a tool to save alot time I wasted. You can do smaller extracts with much less resources, so adjust as needed. This machine is also running RDM & various bots, so if using a dedicated machine you could also adjust for more.
+During the database creation and initial tile rendering processes, you will use a LOT of resources, and exceeding overall server limits is quite easy. The following information is based on a 12 thread, 3.5GHz server with 32GB DDR4 & 2x512GB NVMe SSD in Raid 0, importing North America and rendering much of it - for which I am linking a tool to save a lot of time I wasted. You can do smaller extracts with much less resources, so adjust as needed. This machine is also running RDM & various bots, so if using a dedicated machine you could also adjust for more.
 
 I limited the RAM allotment during import to half the server total but likely could have went to 60 or 70%. In my final test I did not use flat nodes, but if you go for anything more than a continent, uncomment those lines/flags accordingly to make and keep the flat node file volume. I think you may have to remove the commented flags on the OSM2PSQL_EXTRA_ARGS lines, not 100% if it'll just ignore them as is as it is not in my final production file, added for example.
 
